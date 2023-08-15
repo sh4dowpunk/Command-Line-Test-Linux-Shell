@@ -10,3 +10,10 @@
    c) Venus
    d) Jupiter
 
+3. Who wrote the play "Romeo and Juliet"?
+   a) William Shakespeare
+   b) Charles Dickens
+   c) Jane Austen
+   d) Mark Twain
+
+# Add more questions here...

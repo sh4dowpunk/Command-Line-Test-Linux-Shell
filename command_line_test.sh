@@ -57,6 +57,7 @@ take_test() {
 
     log_activity "User '$user_id' started the test."
 
+    # Process questions from the question bank
     while IFS= read -r question; do
         clear
         echo "$question"
