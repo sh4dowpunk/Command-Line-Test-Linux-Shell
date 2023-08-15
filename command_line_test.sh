@@ -57,7 +57,24 @@ take_test() {
 
     log_activity "User '$user_id' started the test."
 
+    while IFS= read -r question; do
+        clear
+        echo "$question"
+        read -t $timeout_duration -p "Your answer: " user_answer
+
+        if [ -z "$user_answer" ]; then
+            echo "Time's up!"
+            continue
+        fi
+
+        attempt_time=$(date +%s)
+
+        echo "$user_id,$question,$user_answer,$attempt_time" >> "$answer_file"
+
+    done < "$question_bank"
+
     log_activity "User '$user_id' completed the test."
+    read -n 1 -s -r -p "Test completed. Press any key to return to the main menu..."
 }
 
 # Main menu
